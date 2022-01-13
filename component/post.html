@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>post</title>
+	<link rel="stylesheet" href="image1/icomoon/style.css">
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: Pretendard;
+	}
+	.post-container {
+		width: 65%;
+		height: 150px;
+		display: flex;
+		
+	}
+	.post-img{
+		display: flex;
+		position: relative;
+		height: 150px;
+	}
+	.post-img > img {
+		width: 150px;
+		height: 150px;
+	}
+	.post-sec1 {
+		width: 40%;
+		display: flex;
+		border-right: 1px solid #C4C4C4;
+		flex-direction: column;
+	}
+	.post-sec1-block1 {
+		display: flex;
+		width: 100%;
+		height: 62%;
+		padding-left: 10%;
+		position: relative;
+		flex-direction: column;
+		padding: 15px;
+	}
+	.post-text > a {
+		margin-right: 3px;
+		text-decoration: none;
+	}
+	.post-text {
+		display: flex;
+		margin-top: 1.5rem;
+	}
+	.post-label {
+		margin-left: 5px;
+		padding-left: 20px;
+		position: absolute;
+		right: 5%;
+	}
+	.post-label > label {
+		border: 1.4px solid #C4C4C4;
+		padding: 3px;
+		border-radius: 5px;
+	}
+	.post-label > input {
+		display: none;
+	}
+	.post-title {
+		position: absolute;
+		width: 100%;
+		height: 38%;
+		bottom: 0;
+		background-color: rgba(54,54,54,0.74);
+	}
+	.post-title > p {
+		margin-top: 7px;
+		margin-left: 25px;
+	}
+	.post-title > p:nth-child(1) {
+		color: #fff;
+		font-size: 1.1rem;
+	}
+	.post-title > p:nth-child(2) {
+		color: #fff;
+		font-size: 0.9rem;
+	}
+	.post-sec1-block2 {
+		background-color: #9A9A9A;
+		width: 100%;
+		height: 38%;
+		display: flex;
+		align-items: center;
+	}
+	.post-playicon {
+		width: 50px;
+		height: 50px;
+		margin-left: 5px;
+		margin-right: 10px;
+	}
+/*	사운드 바 */
+	.seekbar {
+		border-radius: 0;
+		height: 8px;
+    	width: 200px;
+		-webkit-appearance: none; 
+		background: transparent;
+		display: flex;
+		align-items: center;
+		margin-left: 10px;
+		overflow: hidden;
+		border-radius: 10px;
+	}
+	input[type=range]:focus { outline: none; }
+	input[type=range]::-webkit-slider-thumb { 
+		-webkit-appearance: none;
+		width: 8px;
+		height: 8px;
+		color: #fff;
+	}
+/*
+	input[type=range]::-webkit-slider-thumb { 
+		-webkit-appearance: none; 
+		background: #FF6868; 
+		cursor: pointer; 
+		height: 10px; 
+		width: 10px; 
+		border-radius: 100%;
+		margin-top: -2px;
+      	box-shadow: -80px 0 0 80px #43e5f7;
+	} */
+/*
+	input[type=range]::-webkit-slider-runnable-track { 
+		width: 100%; 
+		height: 6px; 
+		cursor: pointer; 
+		background: #191914;
+		border-radius: 10px;
+	} 
+*/
+/*
+	input[type=range]:focus::-webkit-slider-runnable-track { 
+		background: #ff8383; 
+	}
+*/
+</style>
+</head>
+<body>
+	<div class="post-container">
+		<div class="post-img">
+			<img class="post-img1" src="image1/Mask Group.png" alt="">
+			<div class="post-title">
+				<p>1,23,4</p>
+				<p>ooo</p>
+			</div>
+		</div>
+		<div class="post-sec1">
+			<div class="post-sec1-block1">
+				<p>I thought of a good riff, so I recorded it.</p>
+				<div class="post-text">
+					<a href="">#Guitar</a>
+					<a href="">#Band</a>
+					<div class="post-label">
+						<label for="comment" class="comment">1234</label>
+						<input type="checkbox" id="comment">
+						<label for="repost" class="repost">564</label>
+						<input type="checkbox" id="repost">
+						<label for="post-like" class="post-like">
+							<i class="icon-heart"></i>
+							647
+						</label>
+						<input type="checkbox" id="post-like">
+					</div>
+				</div>
+			</div>
+			<div class="post-sec1-block2">
+				<img class="post-playicon" src="image1/Profile Play CTA.png" alt="">
+				<input type="range" step="1" class="seekbar" id="seekbar" value="0" min="0" max="100">
+			</div>
+		</div>
+	</div>
+	<script>
+		const slider = document.getElementById("seekbar");
+		const min = slider.min;
+		const max = slider.max;
+		const value = slider.value;
+
+		slider.style.background = `linear-gradient(to right, #ff8383 0%, #ff8383 ${(value-min)/(max-min)*100}%, #191914 ${(value-min)/(max-min)*100}%, #191914 100%)`
+
+		slider.oninput = function() {
+		  this.style.background = `linear-gradient(to right, #ff8383 0%, #ff8383 ${(this.value-this.min)/(this.max-this.min)*100}%, #191914 ${(this.value-this.min)/(this.max-this.min)*100}%, #191914 100%)`
+		};
+	</script>
+</body>
+</html>

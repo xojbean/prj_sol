@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="image1/icomoon/style.css">
+<title>page-guide</title>
+<style>
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	width: 100vw;
+	position: relative;
+}
+.logo {
+	position: fixed;
+	top: 30px;
+	left: 60px;
+}
+.icon-massege, .icon-upload, .profile-circle {
+	position: fixed;
+	left: 60px;
+}
+.icon-massege {
+	bottom: 250px;
+}
+.icon-upload {
+	bottom: 180px;
+	left: 65px;
+}
+.profile-circle {
+	border: 3px solid #000;
+	width: 55px;
+	height: 55px;
+	border-radius: 100%;
+	bottom: 100px;
+	left: 66px;
+}
+	header {
+		width: 69%;
+		position: fixed;
+		display: flex;
+		left: 16%;
+	}
+.tab-container {
+	display: flex;
+	left: 16%;
+	text-align: center;
+}
+input[name="sort-control"] {
+	display: none;
+}
+.sort-label {
+	width: 200px;
+	padding: 1.7rem;
+	cursor: pointer;
+	display: block;
+	margin-left: 4px;
+}
+:checked + .sort-label {
+	display: block;
+	background-color: #f8f8f8;
+	border-bottom: 8px solid #ff8383;
+}
+.searchbar {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	width: 400px;
+	height: 40px;
+	border-radius: 50px;
+	background-color: #e7ecf0;
+	top: 20px;
+	right: 0;
+}
+.search-icon {
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+}
+.search-input {
+	width: 300px;
+	height: 30px;
+	border: none;
+	background-color: #e7ecf0;
+}
+main {
+	display: flex;
+	width: 68%;
+	height: 90vw;
+	z-index: -1;
+	background-color: #f8f8f8;
+	left: 16%;
+	position: absolute;
+	top: 84px;
+}
+.main-container {
+	z-index: -1;
+	display: flex;
+	position: relative;
+	width: 90vw;
+	height: 90vh;
+}
+
+/* 포스트 */
+.post-container {
+		width: 100%;
+		height: 150px;
+		display: flex;
+		position: absolute;
+	}
+	.post-img{
+		display: flex;
+		position: relative;
+		height: 150px;
+	}
+	.post-img > img {
+		width: 150px;
+		height: 150px;
+	}
+	.post-sec1 {
+		width: 40%;
+		display: flex;
+		border-right: 1px solid #C4C4C4;
+		flex-direction: column;
+	}
+	.post-sec1-block1 {
+		display: flex;
+		width: 100%;
+		height: 62%;
+		padding-left: 10%;
+		position: relative;
+		flex-direction: column;
+		padding: 15px;
+	}
+	.post-text > a {
+		margin-right: 3px;
+		text-decoration: none;
+	}
+	.post-text {
+		display: flex;
+		margin-top: 1.5rem;
+	}
+	.post-label {
+		margin-left: 5px;
+		padding-left: 20px;
+		position: absolute;
+		right: 5%;
+	}
+	.post-label > label {
+		border: 1.4px solid #C4C4C4;
+		padding: 3px;
+		border-radius: 5px;
+	}
+	.post-label > input {
+		display: none;
+	}
+	.post-title {
+		position: absolute;
+		width: 100%;
+		height: 38%;
+		bottom: 0;
+		background-color: rgba(54,54,54,0.74);
+	}
+	.post-title > p {
+		margin-top: 7px;
+		margin-left: 25px;
+	}
+	.post-title > p:nth-child(1) {
+		color: #fff;
+		font-size: 1.1rem;
+	}
+	.post-title > p:nth-child(2) {
+		color: #fff;
+		font-size: 0.9rem;
+	}
+	.post-sec1-block2 {
+		background-color: #9A9A9A;
+		width: 100%;
+		height: 38%;
+		display: flex;
+		align-items: center;
+	}
+	.post-playicon {
+		width: 50px;
+		height: 50px;
+		margin-left: 5px;
+		margin-right: 10px;
+	}
+/*	사운드 바 */
+	.seekbar {
+		border-radius: 0;
+		height: 8px;
+    	width: 200px;
+		-webkit-appearance: none; 
+		background: transparent;
+		display: flex;
+		align-items: center;
+		margin-left: 10px;
+		overflow: hidden;
+		border-radius: 10px;
+	}
+	input[type=range]:focus { outline: none; }
+	input[type=range]::-webkit-slider-thumb { 
+		-webkit-appearance: none;
+		width: 8px;
+		height: 8px;
+		color: #fff;
+	}
+
+</style>
+</head>
+<body>
+<aside class="left-menu">
+	<img class="logo" src="image1/logo black1.png" alt="">
+	<img class="icon-massege" src="image1/Message.svg" alt="">
+	<img class="icon-upload" src="image1/Group 106.svg" alt="">
+	<div class="profile-circle"></div>
+</aside>
+<header>
+	<div class="tab-container">
+		<input type="radio" name="sort-control" id="radio-sort-default" value="default" checked>
+		<label for="radio-sort-default" class="sort-label">최신 포스트</label>
+		<input type="radio" name="sort-control" id="radio-sort-category" value="category">
+		<label for="radio-sort-category" class="sort-label">마이페이지</label>
+	</div>
+	<div class="searchbar"> 
+		<img class="search-icon" src="image1/Search.png" alt=""/>
+    	<input class="search-input" type="text" placeholder="아티스트, 밴드, 음악을 검색해보세요">
+  	</div>
+</header>
+<main>
+	<div class="main-container">
+		<div class="post-container">
+		<div class="post-img">
+			<img class="post-img1" src="image1/Mask Group.png" alt="">
+			<div class="post-title">
+				<p>1,23,4</p>
+				<p>ooo</p>
+			</div>
+		</div>
+		<div class="post-sec1">
+			<div class="post-sec1-block1">
+				<p>I thought of a good riff, so I recorded it.</p>
+				<div class="post-text">
+					<a href="">#Guitar</a>
+					<a href="">#Band</a>
+					<div class="post-label">
+						<label for="comment" class="comment">1234</label>
+						<input type="checkbox" id="comment">
+						<label for="repost" class="repost">564</label>
+						<input type="checkbox" id="repost">
+						<label for="post-like" class="post-like">
+							<i class="icon-heart"></i>
+							647
+						</label>
+						<input type="checkbox" id="post-like">
+					</div>
+				</div>
+			</div>
+			<div class="post-sec1-block2">
+				<img class="post-playicon" src="image1/Profile Play CTA.png" alt="">
+				<input type="range" step="1" class="seekbar" id="seekbar" value="0" min="0" max="100">
+			</div>
+		</div>
+	</div>
+	</div>
+	<script>
+		const slider = document.getElementById("seekbar");
+		const min = slider.min;
+		const max = slider.max;
+		const value = slider.value;
+
+		slider.style.background = `linear-gradient(to right, #ff8383 0%, #ff8383 ${(value-min)/(max-min)*100}%, #191914 ${(value-min)/(max-min)*100}%, #191914 100%)`
+
+		slider.oninput = function() {
+		  this.style.background = `linear-gradient(to right, #ff8383 0%, #ff8383 ${(this.value-this.min)/(this.max-this.min)*100}%, #191914 ${(this.value-this.min)/(this.max-this.min)*100}%, #191914 100%)`
+		};
+	</script>
+</main>
+</body>
+</html>
